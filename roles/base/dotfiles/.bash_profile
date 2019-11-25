@@ -17,14 +17,13 @@ complete -C /usr/local/bin/vault vault
 
 alias ll='ls -lAh'
 
-alias j8="export JAVA_HOME=`/usr/libexec/java_home -v 1.8`; java -version"
-alias j11="export JAVA_HOME=`/usr/libexec/java_home -v 11`; java -version"
+alias j8="export JAVA_HOME=$(/usr/libexec/java_home -v 1.8); java -version"
+alias j11="export JAVA_HOME=$(/usr/libexec/java_home -v 11); java -version"
 
 if [ -e .java_version ]; then
-    local javaVersion
-    javaVersion="$(cat .java_version)"
-    export JAVA_HOME="$(/usr/libexec/java_home -v $javaVersion)"
-    java -version
+    javaVersion="$(. .java_version)"
 else
-  j8
+    javaVersion="1.8"
 fi
+
+export JAVA_HOME="$(/usr/libexec/java_home -v $javaVersion)"
