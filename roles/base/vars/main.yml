@@ -1,0 +1,36 @@
+---
+# list of applications to install
+general:
+  local_home: "{{ lookup('env','HOME') }}"
+
+# homebrew applications
+applications:
+  - bat
+  - coreutils
+  - gdub
+  - gradle
+  - jq
+  - lastpass-cli
+  - maven
+  - maven-completion
+  - python@2
+  - readline
+  - rename
+  - vault
+  - watch
+  - git
+  - tree
+  - httpie
+  - curl
+  - wget
+  - vim
+  - hub
+
+# homebrew cask applications
+cask_applications:
+  - adoptopenjdk8
+  - adoptopenjdk11
+  - intellij-idea
+  - slack
+  - docker
+  - lastpass

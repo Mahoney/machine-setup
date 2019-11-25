@@ -1,0 +1,8 @@
+---
+# getting my dotfile configuration
+
+- name: .bash_profile
+  copy:
+    src: dotfiles/.bash_profile
+    dest: "{{general.local_home}}/.bash_profile"
+  when: configdir.stat.exists
