@@ -33,5 +33,5 @@
     src: scripts/
     dest: "{{home_directory}}/local/bin"
     owner: "{{user}}"
-    group: "{{user}}"
+    group: "staff"
     mode: '0755'
