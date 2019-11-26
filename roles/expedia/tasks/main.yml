@@ -1,0 +1,14 @@
+---
+- name: Setup Expedia
+  include_role:
+    name: base
+
+- name: Setup git clone env
+  copy:
+    dest: {{home_directory}}/.gitcloneenv
+    content: |
+      GIT_CLONE_DEFAULT_HOST={{github_host}}
+      GIT_CLONE_DEFAULT_PROJECT={{github_project}}
+
+- name: maven
+  include: maven.yml

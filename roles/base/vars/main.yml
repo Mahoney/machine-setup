@@ -1,10 +1,11 @@
 ---
 # list of applications to install
-general:
-  local_home: "{{ lookup('env','HOME') }}"
+home_directory: "{{ lookup('env','HOME') }}"
+user: "{{ lookup('env','USER') }}"
 
 # homebrew applications
 applications:
+  - bash-completion@2
   - bat
   - coreutils
   - gdub
@@ -30,7 +31,10 @@ applications:
 cask_applications:
   - adoptopenjdk8
   - adoptopenjdk11
+  - adoptopenjdk13
   - intellij-idea
   - slack
   - docker
+  - kitematic
   - lastpass
+  - postman

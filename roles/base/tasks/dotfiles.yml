@@ -1,8 +1,37 @@
 ---
 # getting my dotfile configuration
 
-- name: .bash_profile
+- name: Ensure presence of bash_profile
+  file: state=touch path={{home_directory}}/.bash_profile
+
+- name: Load bashrc in bash_profile
+  lineinfile: dest={{home_directory}}/.bash_profile regexp="\. \$HOME\/\.bashrc" line="[[ -r $HOME/.bashrc ]] && . $HOME/.bashrc"
+
+- name: Copy in bashrc
+  template: src=/roles/base/templates/bashrc dest={{home_directory}}/.bashrc
+
+- name: Ensure presence of local bin
+  file: state=directory recurse=yes path={{home_directory}}/local/bin
+
+- name: Add local bin to $PATH
+  lineinfile: dest={{home_directory}}/.bashrc regexp="^export PATH\=\$HOME\/local\/bin" line="export PATH=$HOME/local/bin:$PATH"
+
+- name: Copy in git config
+  template: src=/roles/base/templates/git-config dest={{home_directory}}/.gitconfig
+
+- name: Copy in global git ignore
+  file: src=/roles/base/dotfiles/gitignore_global dest={{home_directory}}/.gitignore_global
+
+- name: Copy in .inputrc
+  file: src=/roles/base/dotfiles/inputrc dest={{home_directory}}/.inputrc
+
+- name: Copy in .vimrc
+  file: src=/roles/base/dotfiles/vimrc dest={{home_directory}}/.vimrc
+
+- name: Copy in scripts
   copy:
-    src: dotfiles/.bash_profile
-    dest: "{{general.local_home}}/.bash_profile"
-  when: configdir.stat.exists
+    src: /roles/base/scripts
+    dest: {{home_directory}}/local/bin
+    owner: {{user}}
+    group: {{user}}
+    mode: '0755'

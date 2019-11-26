@@ -1,5 +1,6 @@
 [user]
 	name = Robert Elliot
+	email = {{email}}
 
 [core]
 	autocrlf = input
@@ -12,3 +13,6 @@
     hub-pr = !sh -c 'hub pull-request $0 $@'
 	up = !git fetch --prune && git checkout master && git pull && git branch --merged | grep -v master | xargs git branch -d
 	rebasem = !git fetch --prune && git pull --rebase origin master && git branch --merged | grep -v master | xargs git branch -d
+
+[hub]
+    host = {{github_host}}

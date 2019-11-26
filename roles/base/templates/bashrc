@@ -1,5 +1,3 @@
-export PATH="/usr/local/sbin:$PATH"
-
 export CLICOLOR=1
 export LSCOLORS=exGxBxDxCxEgEdxbxgxcxd
 
@@ -17,8 +15,14 @@ complete -C /usr/local/bin/vault vault
 
 alias ll='ls -lAh'
 
-alias j8="export JAVA_HOME=$(/usr/libexec/java_home -v 1.8); java -version"
-alias j11="export JAVA_HOME=$(/usr/libexec/java_home -v 11); java -version"
+export JAVA_OPTS=-Dapple.awt.UIElement=true
+
+setJava() {
+  export JAVA_HOME="$(/usr/libexec/java_home -v $1)"
+}
+
+alias j8="setJava 1.8"
+alias j11="setJava 11"
 
 if [ -e .java_version ]; then
     javaVersion="$(. .java_version)"
@@ -26,4 +30,4 @@ else
     javaVersion="1.8"
 fi
 
-export JAVA_HOME="$(/usr/libexec/java_home -v $javaVersion)"
+setJava "$javaVersion"
