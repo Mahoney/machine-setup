@@ -1,6 +1,3 @@
-- name: homebrew
-  include: homebrew.yml
-
 - name: dotfiles
   include: dotfiles.yml
 
