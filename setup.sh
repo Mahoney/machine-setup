@@ -5,8 +5,8 @@ IFS=$'\n\t'
 
 main() {
 
-  local git_repo="${1:-https://Mahoney@github.com/Mahoney/machine-setup.git}"
-  local role="${2:-personal}"
+  local role="${1:-personal}"
+  local git_repo="${2:-https://Mahoney@github.com/Mahoney/machine-setup.git}"
 
   echo "==========================================="
   echo "Setting up your mac using $git_repo"
