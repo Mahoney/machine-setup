@@ -1,4 +1,7 @@
 ---
+- name: Ensure presence of .m2
+  file: state=directory recurse=yes path={{home_directory}}/.m2
+
 - name: Setup git clone env
   copy:
     src: roles/expedia/templates/settings.xml
