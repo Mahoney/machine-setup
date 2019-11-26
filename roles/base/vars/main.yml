@@ -33,7 +33,6 @@ cask_applications:
   - adoptopenjdk11
   - adoptopenjdk13
   - intellij-idea
-  - slack
   - docker
   - kitematic
   - lastpass
