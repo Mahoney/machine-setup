@@ -1,3 +1,5 @@
+[[ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]] && . "$(brew --prefix)/etc/profile.d/bash_completion.sh"
+
 export CLICOLOR=1
 export LSCOLORS=exGxBxDxCxEgEdxbxgxcxd
 
@@ -8,8 +10,6 @@ GIT_PS1_SHOWUNTRACKEDFILES=true
 GIT_PS1_SHOWSTASHSTATE=true
 
 PROMPT_COMMAND='__git_ps1 "\u@\h:\w" "\\\$ "'
-
-[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
 complete -C /usr/local/bin/vault vault
 
