@@ -2,6 +2,7 @@
 - name: Setup Expedia
   include_role:
     name: base
+    public: yes
 
 - name: Setup git clone env
   copy:

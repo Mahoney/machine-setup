@@ -2,9 +2,10 @@
 - name: Setup Personal
   include_role:
     name: base
+    public: yes
 
 - name: Setup git clone env
   copy:
-    dest: {{home_directory}}/.gitcloneenv
+    dest: "{{home_directory}}/.gitcloneenv"
     content: |
       GIT_CLONE_DEFAULT_PROJECT={{github_project}}
