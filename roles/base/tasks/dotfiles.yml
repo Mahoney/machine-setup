@@ -20,13 +20,13 @@
   template: src=templates/git-config dest={{home_directory}}/.gitconfig
 
 - name: Copy in global git ignore
-  file: src=dotfiles/gitignore_global dest={{home_directory}}/.gitignore_global
+  copy: src=dotfiles/gitignore_global dest={{home_directory}}/.gitignore_global
 
 - name: Copy in .inputrc
-  file: src=dotfiles/inputrc dest={{home_directory}}/.inputrc
+  copy: src=dotfiles/inputrc dest={{home_directory}}/.inputrc
 
 - name: Copy in .vimrc
-  file: src=dotfiles/vimrc dest={{home_directory}}/.vimrc
+  copy: src=dotfiles/vimrc dest={{home_directory}}/.vimrc
 
 - name: Copy in scripts
   copy:
