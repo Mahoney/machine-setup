@@ -13,7 +13,7 @@
 
 - name: tap homebrew caskroom/cask
   homebrew_tap:
-    tap: "caskroom/cask"
+    tap: "homebrew/cask-cask"
 
 - name: tap homebrew AdoptOpenJDK/openjdk
   homebrew_tap:
