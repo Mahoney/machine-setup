@@ -27,6 +27,7 @@ applications:
   - wget
   - vim
   - hub
+  - docker-completion
 
 # homebrew cask applications
 cask_applications:
