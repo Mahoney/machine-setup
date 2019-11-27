@@ -35,3 +35,16 @@
     owner: "{{user}}"
     group: "staff"
     mode: '0755'
+
+- name: Register bash 4+
+  become: yes
+  lineinfile:
+    dest: /etc/shells
+    insertafter: EOF
+    line: /usr/local/bin/bash
+    state: present
+  notify: Change login shell
+
+handlers:
+  - name: Change login shell
+    command: chsh -s /usr/local/bin/bash

@@ -5,6 +5,7 @@ user: "{{ lookup('env','USER') }}"
 
 # homebrew applications
 applications:
+  - bash
   - bash-completion@2
   - bat
   - coreutils
