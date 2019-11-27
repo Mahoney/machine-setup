@@ -1,4 +1,8 @@
 ---
+
+- name: Ensure presence of .ssh
+  file: state=directory recurse=yes path={{home_directory}}/.ssh
+
 - name: Copy in .ssh/config
   copy: src=files/ssh_config dest={{home_directory}}/.ssh/config
 
@@ -6,4 +10,6 @@
   openssh_keypair:
     path: "{{home_directory}}/.ssh/id_rsa"
     comment: "{{email}}"
-  notify: Setup ssh-agent
+  notify:
+    - Add ssh passphrase
+    - Setup ssh-agent

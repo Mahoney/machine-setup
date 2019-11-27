@@ -2,5 +2,8 @@
   become_user: "{{user}}}}"
   command: chsh -s /usr/local/bin/bash
 
+- name: Add ssh passphrase
+  command: ssh-keygen -p -f "{{home_directory}}/.ssh/id_rsa"
+
 - name: Setup ssh-agent
-  shell: eval "$(ssh-agent -s)" && ssh-add -K ~/.ssh/id_rsa
+  shell: eval "$(ssh-agent -s)" && ssh-add -K "{{home_directory}}/.ssh/id_rsa"
