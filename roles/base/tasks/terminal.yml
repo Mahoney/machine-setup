@@ -1,0 +1,8 @@
+- name: Set default terminal
+  command: defaults write com.apple.Terminal "Default Window Settings" -string "Pro"
+
+- name: Set startup terminal
+  command: defaults write com.apple.Terminal "Startup Window Settings" -string "Pro"
+
+- name: Set startup terminal
+  command: defaults write com.apple.Terminal ShellExitAction 2

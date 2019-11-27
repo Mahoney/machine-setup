@@ -3,3 +3,6 @@
 
 - name: dotfiles
   include: dotfiles.yml
+
+- name: terminal
+  include: terminal.yml
