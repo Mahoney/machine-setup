@@ -10,4 +10,4 @@
 - name: Add script to setup maven authorization
   copy:
     src: roles/expedia/scripts/m2-apitoken-gen.sh
-    dest: "{{home_directory}}/local/bin"
+    dest: "{{home_directory}}/local/bin/m2-apitoken-gen.sh"
