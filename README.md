@@ -16,3 +16,4 @@ TODO:
 * Bash install docker-completions
 * Setup touchbar
 * GitHub public key
+* Work out how to schedule update to happen hourly / daily / whatever
