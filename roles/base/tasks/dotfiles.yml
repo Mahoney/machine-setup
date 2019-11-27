@@ -44,7 +44,3 @@
     line: /usr/local/bin/bash
     state: present
   notify: Change login shell
-
-handlers:
-  - name: Change login shell
-    command: chsh -s /usr/local/bin/bash
