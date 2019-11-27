@@ -6,3 +6,6 @@
 
 - name: terminal
   include: terminal.yml
+
+- name: ssh
+  include: ssh.yml

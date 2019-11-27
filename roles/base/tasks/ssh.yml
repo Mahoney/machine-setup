@@ -1,0 +1,9 @@
+---
+- name: Copy in .ssh/config
+  copy: src=files/ssh_config dest={{home_directory}}/.ssh/config
+
+- name: Create SSH Key
+  openssh_keypair:
+    path: "{{home_directory}}/.ssh/id_rsa"
+    comment: "{{email}}"
+  notify: Setup ssh-agent
