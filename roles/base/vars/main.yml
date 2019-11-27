@@ -27,7 +27,6 @@ applications:
   - wget
   - vim
   - hub
-  - openssh
 
 # homebrew cask applications
 cask_applications:
