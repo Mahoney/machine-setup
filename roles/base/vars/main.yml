@@ -39,3 +39,4 @@ cask_applications:
   - kitematic
   - lastpass
   - postman
+  - visualvm
