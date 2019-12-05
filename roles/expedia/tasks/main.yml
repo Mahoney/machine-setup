@@ -20,6 +20,8 @@
     url: git@github.expedia.biz:Brand-Expedia/homebrew-tools.git
 
 - name: aws_keygen
+  environment:
+    HOMEBREW_ARTIFACTORY_API_TOKEN: "{{ lookup('pipe','curl -u $username --silent --show-error --fail \'https://artylab.expedia.biz/api/security/encryptedPassword\'' }}"
   homebrew:
     name: aws_key_gen
     state: latest
