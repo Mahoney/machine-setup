@@ -13,3 +13,12 @@
 
 - name: maven
   include: maven.yml
+
+- name: tap homebrew AdoptOpenJDK/openjdk
+  homebrew_tap:
+    tap: "Brand-Expedia/homebrew-tools git@github.expedia.biz:Brand-Expedia/homebrew-tools.git"
+
+- name: aws_keygen
+  homebrew:
+    name: "aws_key_gen"
+    state: latest
