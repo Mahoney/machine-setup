@@ -1,5 +1,5 @@
 - name: Change login shell
-  become_user: "{{user}}}}"
+  become_user: "{{user}}"
   command: chsh -s /usr/local/bin/bash
 
 - name: Add ssh passphrase
