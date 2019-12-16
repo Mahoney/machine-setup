@@ -13,3 +13,4 @@
   notify:
     - Add ssh passphrase
     - Setup ssh-agent
+    - Add public key to GitHub

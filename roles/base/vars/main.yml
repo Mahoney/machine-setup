@@ -2,6 +2,7 @@
 # list of applications to install
 home_directory: "{{ lookup('env','HOME') }}"
 user: "{{ lookup('env','USER') }}"
+mac_model: "{{/usr/libexec/PlistBuddy -c \"print :$(sysctl hw.model | cut -f 2 -d ' '):_LOCALIZABLE_:marketingModel\" /System/Library/PrivateFrameworks/ServerInformation.framework/Versions/A/Resources/English.lproj/SIMachineAttributes.plist}}"
 
 # homebrew applications
 applications:

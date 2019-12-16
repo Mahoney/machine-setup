@@ -7,3 +7,6 @@
 
 - name: Setup ssh-agent
   shell: eval "$(ssh-agent -s)" && ssh-add -K "{{home_directory}}/.ssh/id_rsa"
+
+- name: Add public key to GitHub
+  shell: curl -fsSL -u 'rob@lidalia.org.uk' -X POST -d '{"title":"{{location}} {{mac_model}}","key":"ssh-rsa AAA..."}' 'https://api.github.com/user/keys'
