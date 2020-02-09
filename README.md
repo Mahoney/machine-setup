@@ -14,6 +14,7 @@ curl -fsSL https://raw.githubusercontent.com/Mahoney/machine-setup/master/instal
 TODO:
 * IntelliJ Settings
 * IntelliJ plugins
+* IntelliJ command-line launcher
 * Chrome settings / plugins / sync
 * Terminals launched from terminal don't stop properly
 * Bash install docker-completions
@@ -21,3 +22,4 @@ TODO:
 * GitHub public key
 * Work out how to schedule update to happen hourly / daily / whatever
 * Not have to put in a passphrase if there's already a public key
+* `export PATH="/usr/local/sbin:$PATH"` in `.bash_profile` for docker
