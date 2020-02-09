@@ -2,11 +2,14 @@
 Ansible scripts for setting up a mac
 
 To run:
+```bash
 curl -fsSL https://raw.githubusercontent.com/Mahoney/machine-setup/master/install | bash
+```
 
 Or for a different role:
-
+```
 curl -fsSL https://raw.githubusercontent.com/Mahoney/machine-setup/master/install | bash -s <role>
+```
 
 TODO:
 * IntelliJ Settings
