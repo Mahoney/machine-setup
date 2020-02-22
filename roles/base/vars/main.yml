@@ -28,6 +28,7 @@ applications:
   - vim
   - hub
   - docker-completion
+  - graphviz
 
 # homebrew cask applications
 cask_applications:
