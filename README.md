@@ -23,3 +23,4 @@ TODO:
 * Work out how to schedule update to happen hourly / daily / whatever
 * Not have to put in a passphrase if there's already a public key
 * `export PATH="/usr/local/sbin:$PATH"` in `.bash_profile` for docker
+* install the plantuml thing in IntelliJ Idea: https://www.jetbrains.com/help/idea/markdown.html#diagrams
