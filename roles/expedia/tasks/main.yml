@@ -19,9 +19,20 @@
     tap: Brand-Expedia/homebrew-tools
     url: git@github.expedia.biz:Brand-Expedia/homebrew-tools.git
 
+- name: Get Artifactory token
+  shell: "{{ password }} | curl -u {{ user }} --silent --show-error -K --fail https://artylab.expedia.biz/api/security/encryptedPassword"
+  register: arty_token
+
 - name: aws_keygen
   environment:
-    HOMEBREW_ARTIFACTORY_API_TOKEN: "{{ lookup('pipe','curl -u $username --silent --show-error --fail https://artylab.expedia.biz/api/security/encryptedPassword' }}"
+    HOMEBREW_ARTIFACTORY_API_TOKEN: "{{ arty_token.stdout }}"
+  homebrew:
+    name: aws_key_gen
+    state: latest
+
+- name: install aws
+  environment:
+    HOMEBREW_ARTIFACTORY_API_TOKEN: "{{ arty_token.stdout }}"
   homebrew:
     name: aws_key_gen
     state: latest

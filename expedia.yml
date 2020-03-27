@@ -4,3 +4,10 @@
 - hosts: mac
   roles:
     - expedia
+  vars_prompt:
+    - name: password
+      prompt: "What is your password?"
+      private: yes
+#      encrypt: "sha512_crypt"
+#      confirm: yes
+#      salt_size: 7
