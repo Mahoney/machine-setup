@@ -25,11 +25,12 @@ setJava() {
 alias j8="setJava 1.8"
 alias j11="setJava 11"
 alias j13="setJava 13"
+alias j14="setJava 14"
 
 if [ -e .java_version ]; then
     javaVersion="$(cat .java_version)"
 else
-    javaVersion="13"
+    javaVersion="14"
 fi
 
 setJava "$javaVersion"

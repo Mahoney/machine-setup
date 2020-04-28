@@ -29,6 +29,7 @@ applications:
   - hub
   - docker-completion
   - graphviz
+  - java
 
 # homebrew cask applications
 cask_applications:
